@@ -2,6 +2,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 from pyfiglet import Figlet
+from colorama import Style, Fore
 
 # Sets the scope
 SCOPE = [
@@ -24,4 +25,3 @@ data2 = sold.get_all_values()
 
 print(data)
 print(data2)
-
