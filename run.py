@@ -23,5 +23,12 @@ sold = SHEET.worksheet('sold')
 data = estate.get_all_values()
 data2 = sold.get_all_values()
 
-print(data)
-print(data2)
+def display_homepage():
+    """
+    This function displays the homepage of the application
+    """
+    fig_font = Figlet(font='block', width= 100)
+    print(Fore.CYAN + (fig_font.renderText('Buy / Sell Estate\n')))
+    print('------------------------ Ⓒ 2023 --------------------------\n' + Style.RESET_ALL)
+
+display_homepage()
