@@ -17,5 +17,7 @@ estate = SHEET.worksheet('estate')
 sold = SHEET.worksheet('sold')
 
 data = estate.get_all_values()
+data2 = sold.get_all_values()
 
 print(data)
+print(data2)
