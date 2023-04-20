@@ -1,6 +1,7 @@
 # imported libraries
 import gspread
 from google.oauth2.service_account import Credentials
+from pyfiglet import Figlet
 
 # Sets the scope
 SCOPE = [
@@ -9,7 +10,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-# Code to access data froom the spreadsheet
+# Code to access data from the spreadsheet
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
