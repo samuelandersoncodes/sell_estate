@@ -26,6 +26,7 @@ clients = {
 properties = db.properties
 
 result = properties.insert_one(clients)
+print(result)
 
 print(client.list_database_names())
 
@@ -41,3 +42,21 @@ def display_homepage():
 
 display_homepage()
 
+def display_main_menu():
+    """
+    This function displays the terminal's main menu of options
+    """
+    os.system('clear')
+    print("MAIN MENU")
+    print("-=-=-=-=-=-=-=-=-=-=-")
+    print("1. Properties")
+    print("2. Clients")
+    print("-=-=-=-=-=-=-=-=-=-=-")
+    while True:
+        try:
+            option = int(input("Please enter an Option: \n"))
+        except ValueError:
+            print("Please enter a numeric value and try again")
+            continue
+
+display_main_menu()
