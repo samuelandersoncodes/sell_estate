@@ -14,24 +14,6 @@ cluster = os.environ.get("DB_CLUSTER")
 client = MongoClient(cluster)
 db = client.sam
 
-clients = { 
-"client_one" : {"Name" : "Donald Biden", "Tel" : "1578989034", "Associated property / id" : "FH 34_Hanover", 
-"Status" : "Fully-paid"},
-"client_two" : {"Name" : "Hilary Macron", "Tel" : "1751212348", "Associated property / id" : "R24 /c_Munich", 
-"Status" : "Half-payment"},
-"client_three" : {"Name" : "Micheal Jackson", "Tel" : "09175163487", "Associated property / id" : "A13_Cologne", 
-"Status" : "Viewing appointment@ 29/05/23"}
-}
-
-properties = db.properties
-
-result = properties.insert_one(clients)
-print(result)
-
-print(client.list_database_names())
-
-print(db.list_collection_names())
-
 def display_homepage():
     """
     This function displays the homepage of the application
