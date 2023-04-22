@@ -1,27 +1,22 @@
 # imported libraries
-import gspread
-from google.oauth2.service_account import Credentials
+import os
+from dotenv import load_dotenv
 from pyfiglet import Figlet
 from colorama import Style, Fore
+from pymongo import MongoClient
+from pymongo.errors import OperationFailure
 
-# Sets the scope
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
+# Loads the .env file's hidden content 
+load_dotenv()
 
-# Code to access data from the spreadsheet
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('sell_estate')
+# Facilitates access to mongodb data
+cluster = os.environ.get("DB_CLUSTER")
+client = MongoClient(cluster)
+db = client.sam
 
-estate = SHEET.worksheet('estate')
-sold = SHEET.worksheet('sold')
+print(client.list_database_names())
 
-data = estate.get_all_values()
-data2 = sold.get_all_values()
+print(db.list_collection_names())
 
 def display_homepage():
     """
