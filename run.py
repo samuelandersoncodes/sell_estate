@@ -69,6 +69,9 @@ def properties_menu():
         if option == "1":
             list_all_properties()
             break
+        elif option == "2":
+            properties_edit_menu()
+            break
         elif option == "0":
             display_main_menu()
             break
@@ -108,13 +111,29 @@ def display_properties(properties):
     repair_cost = properties["repair_cost"]
     tax_paid = properties["tax_paid"]
     status = properties["status"]
+    profit = properties["profit"]
         
     print()
     print(f"property: {property}")
     print(f"property_type: {property_type}")
     print(f"house_number: {house_number} - location: {location}")
-    print(f"price_bought: {price_bought} - status: {status}")
     print(f"repair_cost: {repair_cost} & tax_paid: {tax_paid}")
+    print(f"price_bought: {price_bought} - status: {status} - profit: {profit}")
+
+def properties_edit_menu():
+    """
+    This function provides property update menu and calls other functions to edit it.
+    If an input is invalid, it shows error and makes another input request.
+    """
+    os.system('clear')
+    print("Update Property")
+    print("---------------")
+    print("1. Update status")
+    print("2. Update profit")
+    print("3. Back to Properties Menu")
+    print("0. Main Menu")
+    print("---------------")
+    option = input("Enter an option: \n")  
     
 def main():
     """
