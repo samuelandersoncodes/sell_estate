@@ -39,6 +39,19 @@ def display_main_menu():
             print("Please enter a numeric value and try again")
             continue
 
+def list_all_properties():
+    """
+    This function fetchs the list of all the
+    available property details from mongodb's collection
+    """
+    try:
+        result = db.properties.find({})
+    except OperationFailure:
+        print("sorry, an error occured")
+    results_list = list(result)
+    if len(results_list) == 0:
+        print("No result found")
+    
 def main():
     """
     This runs the entire program functions
@@ -47,3 +60,9 @@ def main():
     display_main_menu()
 
 main()
+
+
+
+
+
+
