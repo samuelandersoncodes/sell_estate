@@ -39,6 +39,36 @@ def display_main_menu():
             print("Please enter a numeric value and try again")
             continue
 
+def properties_menu():
+    """
+    This function displays the properties menu options. 
+    It takes the user input and calls subsequent functions. 
+    If an input is invalid, it shows error and ask for input again.
+    """
+    os.system('clear')
+    print("Properties Menu")
+    print("---------------")
+    print("1. List All")
+    print("2. Update")
+    print("3. Add New")
+    print("4. Delete")
+    print("0. Main Menu")
+    print("---------------")
+
+    while True:
+        option = input("Enter an option: \n")
+        if option == "1":
+            list_all_properties()
+            break
+        elif option == "0":
+            display_main_menu()
+            break
+        else:
+            print(" You chose an invalid option")
+
+    # returns back to the properties menu after exploration of other functions
+    properties_menu()
+
 def list_all_properties():
     """
     This function fetchs the list of all the
@@ -51,6 +81,8 @@ def list_all_properties():
     results_list = list(result)
     if len(results_list) == 0:
         print("No result found")
+
+
     
 def main():
     """
