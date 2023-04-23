@@ -22,8 +22,6 @@ def display_homepage():
     print(Fore.CYAN + (fig_font.renderText('Buy / Sell Estate\n')))
     print('------------------------ Ⓒ 2023 --------------------------\n' + Style.RESET_ALL)
 
-display_homepage()
-
 def display_main_menu():
     """
     This function displays the terminal's main menu of options
@@ -41,4 +39,11 @@ def display_main_menu():
             print("Please enter a numeric value and try again")
             continue
 
-display_main_menu()
+def main():
+    """
+    This runs the entire program functions
+    """
+    display_homepage()
+    display_main_menu()
+
+main()
