@@ -82,7 +82,26 @@ def list_all_properties():
     if len(results_list) == 0:
         print("No result found")
 
-
+def display_properties(properties):
+    """
+    This function displays details of the properties'
+    collection dictionary from mongodb in a refined format.
+    """
+    property = properties["property"]
+    property_type = properties["property_type"]
+    house_number = properties["house_number"]
+    location = properties["location"]
+    price_bought = properties["price_bought"]
+    repair_cost = properties["repair_cost"]
+    tax_paid = properties["tax_paid"]
+    status = properties["status"]
+        
+    print()
+    print(f"property: {property}")
+    print(f"property_type: {property_type}")
+    print(f"house_number: {house_number} - location: {location}")
+    print(f"price_bought: {price_bought} - status: {status}")
+    print(f"repair_cost: {repair_cost} & tax_paid: {tax_paid}")
     
 def main():
     """
