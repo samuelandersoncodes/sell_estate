@@ -39,6 +39,15 @@ def display_main_menu():
             print("Please enter a numeric value and try again")
             continue
 
+        if option == 1:
+            properties_menu()
+            break
+        elif option == 2:
+            clients_menu()
+            break
+        else:
+            print("You chose an invalid option")
+
 def properties_menu():
     """
     This function displays the properties menu options. 
