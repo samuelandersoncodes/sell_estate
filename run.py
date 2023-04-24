@@ -179,6 +179,18 @@ def properties_update_status(house_number=None):
         print("\nProperty not found")
         input("\nPress a key to continue...\n")
 
+def find_property_by_house_number(house_number):
+    """
+    This function finds a property in mongodb by the 
+    corresponding house number.
+    """
+    try:
+        result = db.properties.find_one({"house_number": house_number})
+        return result
+    except OperationFailure:
+        print("Sorry, this house number does not match any property")
+        return None    
+
 def main():
     """
     This runs the entire program functions
