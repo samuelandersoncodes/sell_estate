@@ -72,6 +72,14 @@ def properties_menu():
         elif option == "2":
             properties_edit_menu()
             break
+        elif option == "3":
+            new_properties = add_new_property()
+            if new_properties is not None:
+                save_property_details(new_estate)
+            break
+        elif option == "4":
+            remove_property()
+            break
         elif option == "0":
             display_main_menu()
             break
