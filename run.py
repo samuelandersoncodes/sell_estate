@@ -134,6 +134,21 @@ def properties_edit_menu():
     print("0. Main Menu")
     print("---------------")
 
+    option = input("Enter an option: \n")
+    if option == "1":
+        properties_update_status()
+        properties_edit_menu()
+    elif option == "2":
+        properties_edit_menu()
+    elif option == "3":
+        properties_menu()
+    elif option == "0":
+        display_main_menu()
+    else:
+        print("You entered an invalid option, please try again")
+        input("\nPress a key to continue\n")
+        properties_edit_menu()
+
 def properties_update_status(house_number=None):
     """
     This function updates the selling status of the property
@@ -172,9 +187,3 @@ def main():
     display_main_menu()
 
 main()
-
-
-
-
-
-
