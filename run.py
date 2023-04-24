@@ -222,6 +222,35 @@ def find_property_by_house_number(house_number):
         print("Sorry, this house number does not match any property")
         return None    
 
+def add_new_property():
+    """
+    This function prepares a new property in a dictionary form.
+    which will be saved subsequently to mongodb by another function.
+    User is first asked for house number, if house number already exists,
+    user is obliged to enter a new one. 
+    """
+    house_number = (input("Enter house_number\n")).upper()
+    result = find_property_by_house_number(house_number)
+    if result is not None:
+        print("You have already recorded this property\n")
+        display_properties(result)
+        input("\nPress a key to continue\n")
+        return None
+    
+    property_details = {
+        "property": property_one,
+        "property_type": property_type,
+        "house_number": house_number,        
+        "location": location,
+        "price_bought": price_bought,
+        "repair_cost": repair_cost,
+        "tax_paid": tax_paid,
+        "status": status,
+        "profit": profit,        
+    }
+    return property_details
+
+
 def main():
     """
     This runs the entire program functions
