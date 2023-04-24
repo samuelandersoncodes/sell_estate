@@ -133,8 +133,37 @@ def properties_edit_menu():
     print("3. Back to Properties Menu")
     print("0. Main Menu")
     print("---------------")
-    option = input("Enter an option: \n")  
+
+def properties_update_status(house_number=None):
+    """
+    This function updates the selling status of the property
+    with a default of None if the house_number is not passed
+    as an arguement.
+    User searches by house number for the update.
+    """
     
+    if house_number is None:
+        house_number = (input("Enter house_no: \n")).upper()
+    result = find_property_by_house_number(house_number)
+    if result is not None:
+        display_properties(result)
+        
+        try:
+            new_status = (input("\nPlease enter the new status\n"))
+            db.properties.update_one(
+                {"house number": house_number}, {"$set": {
+                    "status": new_status,
+                    }}
+                )
+            print(f"your new status is {new_status}")
+            print("successfully updated!")
+        except OperationFailure:
+            print("Sorry! status could not update, please try again later")
+        input("\nPress a key to continue...\n")
+    else:
+        print("\nProperty not found")
+        input("\nPress a key to continue...\n")
+
 def main():
     """
     This runs the entire program functions
