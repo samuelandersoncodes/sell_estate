@@ -139,6 +139,7 @@ def properties_edit_menu():
         properties_update_status()
         properties_edit_menu()
     elif option == "2":
+        properties_profit_update()
         properties_edit_menu()
     elif option == "3":
         properties_menu()
@@ -174,6 +175,36 @@ def properties_update_status(house_number=None):
             print("successfully updated!")
         except OperationFailure:
             print("Sorry! status could not update, please try again later")
+        input("\nPress a key to continue...\n")
+    else:
+        print("\nProperty not found")
+        input("\nPress a key to continue...\n")
+
+def properties_profit_update(house_number=None):
+    """
+    This function updates the profit of the property
+    with a default of None if the house_number is not passed
+    as an arguement.
+    User searches by house number for the profit update.
+    """
+    
+    if house_number is None:
+        house_number = (input("Enter house_no: \n")).upper()
+    result = find_property_by_house_number(house_number)
+    if result is not None:
+        display_properties(result)
+        
+        try:
+            profit_update = (input("\nPlease enter the current profit\n"))
+            db.properties.update_one(
+                {"house number": house_number}, {"$set": {
+                    "profit": profit_update,
+                    }}
+                )
+            print(f"your updated profit is {profit_update}")
+            print("successfully updated!")
+        except OperationFailure:
+            print("Sorry! profit could not update, please try again later")
         input("\nPress a key to continue...\n")
     else:
         print("\nProperty not found")
