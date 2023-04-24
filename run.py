@@ -250,7 +250,21 @@ def add_new_property():
     }
     return property_details
 
-
+def save_property_details(properties):
+    """
+    This function saves the updates provided in the 
+    add_new_property function into mongodb.
+    """
+    try:
+        db.properties.insert_one(properties)
+        print("Update successful!")
+        input("\nPress a key to continue\n")
+        return True
+    except OperationFailure:
+        print("Sorry there was an error, update failed!")
+        input("\nPress a key to continue\n")
+        return False
+    
 def main():
     """
     This runs the entire program functions
