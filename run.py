@@ -264,6 +264,26 @@ def save_property_details(properties):
         print("Sorry there was an error, update failed!")
         input("\nPress a key to continue\n")
         return False
+
+def remove_property():
+    """
+    This function finds a property by house number, 
+    confirms if user is sure of removing the specific property. 
+    Then deletes it upon confirmation.
+    """
+    house_number = (input("Enter a house number\n")).upper()
+    result = find_property_by_house_number(house_number)
+    if result is not None:
+        display_properties(result)
+        confirm_removal = input("\n\nPlease confirm removal? (y/n) : \n")
+        if confirm_removal == 'y':
+            db.properties.delete_one({"house_number": house_number})
+            print("\nProperty removed!")
+        else:
+            print("\nProperty removal failed")
+    else:
+        print(f"\nNo results found for {house_number}")
+    input("\nPress a key to continue\n")
     
 def main():
     """
