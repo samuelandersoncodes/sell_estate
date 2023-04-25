@@ -165,6 +165,8 @@ def properties_edit_menu():
         input("\nPress a key to continue\n")
         properties_edit_menu()
 
+
+
 def properties_update_status(house_number=None):
     """
     This function updates the selling status of the property
@@ -172,9 +174,9 @@ def properties_update_status(house_number=None):
     as an arguement.
     User searches by house number for the update.
     """
-    
-    if house_number is None:
-        house_number = (input("Enter house_no: \n")).upper()
+    housenumber = None
+    if housenumber is None:
+        housenumber = (input("Enter house_no: \n")).upper()
     result = find_property_by_house_number(house_number)
     if result is not None:
         display_properties(result)
@@ -182,7 +184,7 @@ def properties_update_status(house_number=None):
         try:
             new_status = (input("\nPlease enter the new status\n"))
             db.properties.update_one(
-                {"house number": house_number}, {"$set": {
+                {"house_number": housenumber}, {"$set": {
                     "status": new_status,
                     }}
                 )
