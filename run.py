@@ -164,20 +164,18 @@ def properties_edit_menu():
         print("You entered an invalid option, please try again")
         input("\nPress a key to continue\n")
         properties_edit_menu()
-
-
-
-def properties_update_status(house_number=None):
+        
+def properties_update_status(housenumber=None):
     """
     This function updates the selling status of the property
     with a default of None if the house_number is not passed
     as an arguement.
     User searches by house number for the update.
     """
-    housenumber = None
+    
     if housenumber is None:
         housenumber = (input("Enter house_no: \n")).upper()
-    result = find_property_by_house_number(house_number)
+    result = find_property_by_house_number(housenumber)
     if result is not None:
         display_properties(result)
         
