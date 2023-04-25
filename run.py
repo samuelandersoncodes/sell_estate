@@ -1,10 +1,11 @@
 # imported libraries
 import os
-from dotenv import load_dotenv
+import sys
 from pyfiglet import Figlet
 from colorama import Style, Fore
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure
+from dotenv import load_dotenv
 
 # Loads the .env file's hidden content 
 load_dotenv()
@@ -61,7 +62,8 @@ def properties_menu():
     print("2. Update")
     print("3. Add New")
     print("4. Delete")
-    print("0. Main Menu")
+    print("5. Main Menu")
+    print("0. Exit")
     print("---------------")
 
     while True:
@@ -80,9 +82,11 @@ def properties_menu():
         elif option == "4":
             remove_property()
             break
-        elif option == "0":
+        elif option == "5":
             display_main_menu()
             break
+        elif option == "0":
+            sys.exit("Your program ended successfully!")
         else:
             print(" You chose an invalid option")
 
@@ -139,7 +143,8 @@ def properties_edit_menu():
     print("1. Update status")
     print("2. Update profit")
     print("3. Back to Properties Menu")
-    print("0. Main Menu")
+    print("4. Main Menu")
+    print("0. Exit")
     print("---------------")
 
     option = input("Enter an option: \n")
@@ -151,8 +156,10 @@ def properties_edit_menu():
         properties_edit_menu()
     elif option == "3":
         properties_menu()
-    elif option == "0":
+    elif option == "4":
         display_main_menu()
+    elif option == "0":
+        sys.exit("Your program ended successfully!")
     else:
         print("You entered an invalid option, please try again")
         input("\nPress a key to continue\n")
