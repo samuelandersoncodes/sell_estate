@@ -75,8 +75,8 @@ def properties_menu():
             properties_edit_menu()
             break
         elif option == "3":
-            new_properties = add_new_property()
-            if new_properties is not None:
+            new_estate = add_new_property()
+            if new_estate is not None:
                 save_property_details(new_estate)
             break
         elif option == "4":
@@ -244,18 +244,29 @@ def add_new_property():
     User is first asked for house number, if house number already exists,
     user is obliged to enter a new one. 
     """
-    house_number = (input("Enter house_number\n")).upper()
-    result = find_property_by_house_number(house_number)
+        
+    housenumber = (input("Enter house_number\n")).upper()
+    result = find_property_by_house_number(housenumber)
     if result is not None:
         print("You have already recorded this property\n")
         display_properties(result)
         input("\nPress a key to continue\n")
         return None
-    
+
+    property_number = (input("Please enter property_no: \n")).lower()
+    housenumber = (input("Please enter house_no: \n")).upper()
+    property_type = (input("Please enter property_type: \n")).lower()
+    location = (input("Please enter property location: \n")).lower()
+    price_bought = (input("Please enter price_bought: \n")).lower()
+    repair_cost = (input("Please enter repair_cost: \n")).lower()
+    tax_paid = (input("Please enter tax_paid: \n")).lower()
+    status = (input("Please enter status: \n")).lower()
+    profit = (input("Please enter profit: \n")).lower()
+
     property_details = {
-        "property": property_one,
+        "property": property_number,
         "property_type": property_type,
-        "house_number": house_number,        
+        "house_number": housenumber,       
         "location": location,
         "price_bought": price_bought,
         "repair_cost": repair_cost,
