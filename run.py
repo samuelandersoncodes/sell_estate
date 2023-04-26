@@ -245,7 +245,8 @@ def add_new_property():
     user is obliged to enter a new one. 
     """
         
-    housenumber = (input("Enter house_number\n")).upper()
+    housenumber = (input(
+        "To avoid duplication verify house_number:\n")).upper()
     result = find_property_by_house_number(housenumber)
     if result is not None:
         print("You have already recorded this property\n")
