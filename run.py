@@ -438,7 +438,7 @@ def update_property_ref(client_name=None):
     """
     
     if client_name is None:
-        client_name = (input("Please enter clients' name: \n")).upper()
+        client_name = (input("Please enter clients' name: \n"))
     result = find_client_by_name(client_name)
     if result is not None:
         display_clients(result)
