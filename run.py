@@ -115,7 +115,7 @@ def display_properties(properties):
     This function displays details of the properties'
     collection dictionary from mongodb in a refined format.
     """
-    property = properties["property"]
+    property_number = properties["property_number"]
     property_type = properties["property_type"]
     house_number = properties["house_number"]
     location = properties["location"]
@@ -126,7 +126,7 @@ def display_properties(properties):
     profit = properties["profit"]
         
     print()
-    print(f"property: {property}")
+    print(f"property_number: {property_number}")
     print(f"property_type: {property_type}")
     print(f"house_number: {house_number} - location: {location}")
     print(f"repair_cost: {repair_cost} & tax_paid: {tax_paid}")
