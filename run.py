@@ -367,8 +367,23 @@ def list_all_clients():
     results_list = list(result)
     if len(results_list) == 0:
         print("No result found")
-    
-  
+
+def display_clients(clients):
+    """
+    This function displays details of the clients'
+    collection dictionary from mongodb in a refined format.
+    """
+    name = clients["name"]
+    email = clients["email"]
+    tel = clients["tel"]    
+    associated_property_ref = clients["associated_property/_ref"]
+            
+    print()
+    print(f"name: {name}")
+    print(f"email: {email}")
+    print(f"tel: {tel}")
+    print(f"associated_property_ref: {associated_property_ref}")
+      
 def main():
     """
     This runs the entire program functions
