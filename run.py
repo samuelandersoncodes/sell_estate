@@ -342,7 +342,7 @@ def clients_menu():
                 save_client_details(new_client)
             break
         elif option == "4":
-            remove_property()
+            remove_client()
             break
         elif option == "5":
             display_main_menu()
@@ -502,6 +502,26 @@ def save_client_details(clients):
         print("Sorry there was an error, update failed!")
         input("\nPress a key to continue\n")
         return False
+
+def remove_client():
+    """
+    This function finds a client by name, 
+    confirms if user is sure of removing the specific client. 
+    Then deletes it upon confirmation.
+    """
+    name = (input("Enter a name\n"))
+    result = find_client_by_name(name)
+    if result is not None:
+        display_clients(result)
+        confirm_removal = input("\n\nPlease confirm removal? (y/n) : \n")
+        if confirm_removal == 'y':
+            db.clients.delete_one({"name": name})
+            print("\nClient removed!")
+        else:
+            print("\nClient removal failed")
+    else:
+        print(f"\nNo results found for {name}")
+    input("\nPress a key to continue\n")
       
 def main():
     """
