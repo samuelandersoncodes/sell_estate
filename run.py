@@ -467,21 +467,21 @@ def add_new_client():
     user is obliged to enter a new one. 
     """
         
-    client_name = (input("verify name to avoid duplication: \n"))
+    client_name = (input("To avoid duplication verify name: \n"))
     result = find_client_by_name(client_name)
     if result is not None:
-        print("You have already recorded this name\n")
+        print("You have already recorded this client\n")
         display_clients(result)
         input("\nPress a key to continue\n")
         return None
 
-    clients_name = (input("Good to go! Please re-enter name: \n")).capitalize()
+    client_name = (input("Good to go! Please re-enter name: \n")).capitalize()
     email_address = (input("Please enter an email: \n")).lower()
-    telephone_number = int(input("Please enter telephone number: \n"))
+    telephone_number = int(input("Please enter telelephone number: \n"))
     associated_property_ref = (input("Please enter the associated_property_ref: \n"))
     
     client_details = {
-        "name": clients_name,
+        "name": client_name,
         "email": email_address,
         "tel": telephone_number,       
         "associated_property_ref": associated_property_ref,
@@ -494,7 +494,7 @@ def save_client_details(clients):
     add_new_client function's inputs into mongodb.
     """
     try:
-        db.properties.insert_one(clients)
+        db.clients.insert_one(clients)
         print("Update successful!")
         input("\nPress a key to continue\n")
         return True
