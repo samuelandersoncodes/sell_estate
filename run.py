@@ -477,7 +477,7 @@ def add_new_client():
 
     clients_name = (input("Good to go! Please re-enter name: \n")).capitalize()
     email_address = (input("Please enter an email: \n")).lower()
-    telephone_number = (input("Please enter telephone number: \n")).int()
+    telephone_number = int(input("Please enter telephone number: \n"))
     associated_property_ref = (input("Please enter the associated_property_ref: \n"))
     
     client_details = {
