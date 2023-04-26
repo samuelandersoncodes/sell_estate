@@ -354,6 +354,20 @@ def clients_menu():
 
     # returns back to the clients menu after exploring other functions
     clients_menu()
+
+def list_all_clients():
+    """
+    This function fetchs the list of all the
+    available client details from mongodb's clients collection
+    """
+    try:
+        result = db.clients.find({})
+    except OperationFailure:
+        print("sorry, an error occured")
+    results_list = list(result)
+    if len(results_list) == 0:
+        print("No result found")
+    
   
 def main():
     """
