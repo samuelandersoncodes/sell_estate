@@ -398,6 +398,36 @@ def find_client_by_name(name):
     except OperationFailure:
         print("Sorry, you dont have this name in your list")
         return None
+
+def update_property_ref(client_name=None):
+    """
+    This function updates the associated property ref of the client
+    with a default of None if the name is not passed
+    as an arguement.
+    User searches for client by name for the update.
+    """
+    
+    if client_name is None:
+        client_name = (input("Please enter clients' name: \n")).upper()
+    result = find_client_by_name(client_name)
+    if result is not None:
+        display_clients(result)
+        
+        try:
+            new_ref = (input("\nPlease enter the new property ref: \n"))
+            db.clients.update_one(
+                {"name": client_name}, {"$set": {
+                    "associated_property_ref": new_ref,
+                    }}
+                )
+            print(f"your new property ref is: {new_ref}")
+            print("successfully updated!")
+        except OperationFailure:
+            print("Sorry! property ref could not update, please try again later")
+        input("\nPress a key to continue...\n")
+    else:
+        print("\nProperty not found")
+        input("\nPress a key to continue...\n")
       
 def main():
     """
