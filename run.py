@@ -367,7 +367,11 @@ def list_all_clients():
     results_list = list(result)
     if len(results_list) == 0:
         print("No result found")
-
+    else:
+        for result in results_list:
+            display_clients(result)
+    input("\nPress a key to continue\n")
+    
 def display_clients(clients):
     """
     This function displays details of the clients'
