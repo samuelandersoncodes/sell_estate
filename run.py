@@ -371,7 +371,7 @@ def list_all_clients():
         for result in results_list:
             display_clients(result)
     input("\nPress a key to continue\n")
-    
+
 def display_clients(clients):
     """
     This function displays details of the clients'
@@ -380,7 +380,7 @@ def display_clients(clients):
     name = clients["name"]
     email = clients["email"]
     tel = clients["tel"]    
-    associated_property_ref = clients["associated_property/_ref"]
+    associated_property_ref = clients["associated_property_ref"]
             
     print()
     print(f"name: {name}")
