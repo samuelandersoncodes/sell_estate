@@ -310,6 +310,50 @@ def remove_property():
     else:
         print(f"\nNo results found for {house_number}")
     input("\nPress a key to continue\n")
+
+def clients_menu():
+    """
+    This function displays the clients menu options. 
+    It takes the user input and calls subsequent functions. 
+    If an input is invalid, it shows error and ask for the input again.
+    """
+    os.system('clear')
+    print("Clients Menu")
+    print("---------------")
+    print("1. List All")
+    print("2. Update")
+    print("3. Add New")
+    print("4. Delete")
+    print("5. Main Menu")
+    print("0. Exit")
+    print("---------------")
+
+    while True:
+        option = input("Enter an option: \n")
+        if option == "1":
+            list_all_clients()
+            break
+        elif option == "2":
+            edit_clients_menu()
+            break
+        elif option == "3":
+            new_client = add_new_property()
+            if new_client is not None:
+                save_property_details(new_client)
+            break
+        elif option == "4":
+            remove_property()
+            break
+        elif option == "5":
+            display_main_menu()
+            break
+        elif option == "0":
+            sys.exit("Your program ended successfully!")
+        else:
+            print(" You chose an invalid option")
+
+    # returns back to the clients menu after exploring other functions
+    clients_menu()
     
 def main():
     """
