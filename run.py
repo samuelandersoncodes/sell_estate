@@ -354,7 +354,7 @@ def clients_menu():
 
     # returns back to the clients menu after exploring other functions
     clients_menu()
-    
+  
 def main():
     """
     This runs the entire program functions
@@ -363,3 +363,18 @@ def main():
     display_main_menu()
 
 main()
+
+db = client.sam
+
+clients = db.clients
+
+print(db.list_collection_names())
+
+db.clients.find()
+
+clients_list = [{"name": "Drake Minaj", "email": "drakeminaj@gmail.com", "tel": "13358890025", 
+"associated_property/_ref": "LA_34_munich"},
+{"name": "Beyonce Wayne", "email": "beyoncewayne@hotmail.com", "tel": "15756969347", 
+"associated_property/_ref": "FH_134_hanover"}]
+
+result = clients.insert_many(clients_list)
