@@ -337,9 +337,9 @@ def clients_menu():
             clients_edit_menu()
             break
         elif option == "3":
-            new_client = add_new_property()
+            new_client = add_new_client()
             if new_client is not None:
-                save_property_details(new_client)
+                save_client_details(new_client)
             break
         elif option == "4":
             remove_property()
@@ -487,6 +487,21 @@ def add_new_client():
         "associated_property_ref": associated_property_ref,
     }
     return client_details
+
+def save_client_details(clients):
+    """
+    This function saves the updates provided in the 
+    add_new_client function's inputs into mongodb.
+    """
+    try:
+        db.properties.insert_one(clients)
+        print("Update successful!")
+        input("\nPress a key to continue\n")
+        return True
+    except OperationFailure:
+        print("Sorry there was an error, update failed!")
+        input("\nPress a key to continue\n")
+        return False
       
 def main():
     """
