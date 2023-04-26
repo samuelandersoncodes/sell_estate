@@ -467,7 +467,7 @@ def add_new_client():
     user is obliged to enter a new one. 
     """
         
-    client_name = (input("Enter name: \n"))
+    client_name = (input("verify name to avoid duplication: \n"))
     result = find_property_by_house_number(client_name)
     if result is not None:
         print("You have already recorded this name\n")
@@ -475,7 +475,7 @@ def add_new_client():
         input("\nPress a key to continue\n")
         return None
 
-    clients_name = (input("Please enter name: \n")).capitalize()
+    clients_name = (input("Good to go! Please re-enter name: \n")).capitalize()
     email_address = (input("Please enter an email: \n")).lower()
     telephone_number = (input("Please enter telephone number: \n")).int()
     associated_property_ref = (input("Please enter the associated_property_ref: \n"))
