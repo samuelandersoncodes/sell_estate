@@ -334,7 +334,7 @@ def clients_menu():
             list_all_clients()
             break
         elif option == "2":
-            edit_clients_menu()
+            clients_edit_menu()
             break
         elif option == "3":
             new_client = add_new_property()
