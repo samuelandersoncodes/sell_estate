@@ -388,6 +388,36 @@ def display_clients(clients):
     print(f"tel: {tel}")
     print(f"associated_property_ref: {associated_property_ref}")
 
+def clients_edit_menu():
+    """
+    This function provides clients update menu
+    and calls other functions to edit it.
+    If an input is invalid, it shows error and makes another input request.
+    """
+    os.system('clear')
+    print("Update Client")
+    print("---------------")
+    print("1. Update property ref")
+    print("2. Back to Clients Menu")
+    print("3. Main Menu")
+    print("0. Exit")
+    print("---------------")
+
+    option = input("Enter an option: \n")
+    if option == "1":
+        update_property_ref()
+        clients_edit_menu()
+    elif option == "2":
+        clients_menu()
+    elif option == "3":
+        display_main_menu()
+    elif option == "0":
+        sys.exit("Your program ended successfully!")
+    else:
+        print("You entered an invalid option, please try again")
+        input("\nPress a key to continue\n")
+        clients_edit_menu()
+
 def find_client_by_name(name):
     """
     This function finds client in mongodb by their name.
