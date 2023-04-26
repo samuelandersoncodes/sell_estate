@@ -468,7 +468,7 @@ def add_new_client():
     """
         
     client_name = (input("verify name to avoid duplication: \n"))
-    result = find_property_by_house_number(client_name)
+    result = find_client_by_name(client_name)
     if result is not None:
         print("You have already recorded this name\n")
         display_clients(result)
