@@ -458,6 +458,35 @@ def update_property_ref(client_name=None):
     else:
         print("\nProperty not found")
         input("\nPress a key to continue...\n")
+
+def add_new_client():
+    """
+    This function prepares the entry of a new client in a dictionary form.
+    which will be saved subsequently to mongodb by another function.
+    User is first asked for client's name, if the name already exists,
+    user is obliged to enter a new one. 
+    """
+        
+    client_name = (input("Enter name: \n"))
+    result = find_property_by_house_number(client_name)
+    if result is not None:
+        print("You have already recorded this name\n")
+        display_clients(result)
+        input("\nPress a key to continue\n")
+        return None
+
+    clients_name = (input("Please enter name: \n")).capitalize()
+    email_address = (input("Please enter an email: \n")).lower()
+    telephone_number = (input("Please enter telephone number: \n")).int()
+    associated_property_ref = (input("Please enter the associated_property_ref: \n"))
+    
+    client_details = {
+        "name": clients_name,
+        "email": email_address,
+        "tel": telephone_number,       
+        "associated_property_ref": associated_property_ref,
+    }
+    return client_details
       
 def main():
     """
