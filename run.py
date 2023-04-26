@@ -387,6 +387,17 @@ def display_clients(clients):
     print(f"email: {email}")
     print(f"tel: {tel}")
     print(f"associated_property_ref: {associated_property_ref}")
+
+def find_client_by_name(name):
+    """
+    This function finds client in mongodb by their name.
+    """
+    try:
+        result = db.clients.find_one({"name": name})
+        return result
+    except OperationFailure:
+        print("Sorry, you dont have this name in your list")
+        return None
       
 def main():
     """
