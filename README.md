@@ -40,3 +40,10 @@ As a prospective real estate business person, I am inspired to create this pilot
 ### Target Audience
 
 * Small estate businesses that want to keep track of their properties and clients.
+
+### User Stories
+
+* As a User, I would like to be able to easily find the various menus. In order for me to be able to view properties and clients details. I would also love to update, add, edit and or remove details.
+* As a User, I would like to be able to manage my properties so that I can easily keep track of property details and be able to udpate, edit, add and or delete when neccessary. I would also love to easily find my property by their house number.
+* As a User, I would like to be able to manage my clients' details so that I can add, delete, update and find clients easily by thier name when necessary.
+* As a User, I would like to be able to return to the main menu without having to restart the application and also exit just by a tap.
