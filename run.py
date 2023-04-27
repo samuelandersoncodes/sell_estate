@@ -30,6 +30,7 @@ def display_main_menu():
     This function displays the terminal's main menu of options
     """
     os.system('clear')
+    display_homepage()
     print("MAIN MENU")
     print("-=-=-=-=-=-=-=-=-=-=-")
     print("1. Properties")
@@ -546,7 +547,7 @@ def main():
     """
     This runs the entire program functions
     """
-    display_homepage()
+
     display_main_menu()
 
 
