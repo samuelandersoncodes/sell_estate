@@ -56,3 +56,8 @@ As a prospective real estate business person, I am inspired to create this pilot
     * Add, list, update and delete functionality for clients.
 * Return to main menu option through sub menus.
 * Exit easily by pressing 0 and enter.
+
+## Structure
+
+### Features
+
