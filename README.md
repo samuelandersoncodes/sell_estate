@@ -1,5 +1,7 @@
 # Sell Estate
 
+![Application's GIF](docs/sellestate.gif)
+
 ## Table Of Content
 
 - [Introduction](#Introduction)
