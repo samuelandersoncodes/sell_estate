@@ -5,6 +5,7 @@
 ## Table Of Content
 
 - [Introduction](#Introduction)
+    - [Application link](#Application-link)
     - [Site Goals](#Site-Goals)
     - [Target Audience](#Target-Audience)
     - [User stories](#User-Stories)
@@ -28,7 +29,9 @@
 
 ## Introduction
 
-As a prospective real estate business person, I am inspired to create this pilot project to help beginner and small estate business persons keep track of their records. This project will help in adding new properties and clients acquired. It will also allow for updating the status and profit they make on property sales. There is also room for updating client's associated property with the help of setting a property reference.
+As a prospective real estate business person, I am inspired to create this pilot project to help beginner and small estate business persons keep track of their records. This project will help in adding new properties and clients acquired. It will also allow for updating the status and profit they make on property sales. There is also room for updating client's associated property with the help of setting a property reference.                                      
+
+### View the deployed application [here](https://sell-estate.herokuapp.com/)
 
 ### Site Goals
 
