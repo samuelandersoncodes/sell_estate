@@ -20,9 +20,9 @@ def display_homepage():
     """
     This function displays the homepage of the application
     """
-    fig_font = Figlet(font='block', width=100)
+    fig_font = Figlet(font='block', width=200)
     print(Fore.CYAN + (fig_font.renderText('Sell Estate\n')))
-    print('---------------- Ⓒ 2023 ---------------\n' + Style.RESET_ALL)
+    print('-=-=-= Ⓒ 2023 -=-=-=-\n' + Style.RESET_ALL)
 
 
 def display_main_menu():
