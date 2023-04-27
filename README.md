@@ -61,3 +61,8 @@ As a prospective real estate business person, I am inspired to create this pilot
 
 ### Features
 
+USER STORY
+
+`
+As a User, I would love to be able to easily find and understand the main menu so that I can at first know where exactly to get clients or properties information. In order for me to subsequently update, add or remove its details.
+`
