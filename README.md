@@ -37,3 +37,6 @@ As a prospective real estate business person, I am inspired to create this pilot
 
 * To provide a simple application for the site owner to keep track of their properties and clients.
 
+### Target Audience
+
+* Small estate businesses that want to keep track of their properties and clients.
