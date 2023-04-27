@@ -7,7 +7,7 @@ from pymongo import MongoClient
 from pymongo.errors import OperationFailure
 from dotenv import load_dotenv
 
-# Loads the .env file's hidden content 
+# Loads the .env file's hidden content
 load_dotenv()
 
 # Facilitates access to mongodb data
@@ -15,13 +15,15 @@ cluster = os.environ.get("DB_CLUSTER")
 client = MongoClient(cluster)
 db = client.sam
 
+
 def display_homepage():
     """
     This function displays the homepage of the application
     """
-    fig_font = Figlet(font='block', width= 100)
+    fig_font = Figlet(font='block', width=100)
     print(Fore.CYAN + (fig_font.renderText('Buy / Sell Estate\n')))
-    print('------------------------ Ⓒ 2023 --------------------------\n' + Style.RESET_ALL)
+    print('---------------- Ⓒ 2023 ---------------\n' + Style.RESET_ALL)
+
 
 def display_main_menu():
     """
@@ -49,10 +51,11 @@ def display_main_menu():
         else:
             print("You chose an invalid option")
 
+
 def properties_menu():
     """
-    This function displays the properties menu options. 
-    It takes the user input and calls subsequent functions. 
+    This function displays the properties menu options.
+    It takes the user input and calls subsequent functions.
     If an input is invalid, it shows error and ask for input again.
     """
     os.system('clear')
@@ -93,6 +96,7 @@ def properties_menu():
     # returns back to the properties menu after exploration of other functions
     properties_menu()
 
+
 def list_all_properties():
     """
     This function fetchs the list of all the
@@ -110,6 +114,7 @@ def list_all_properties():
             display_properties(result)
     input("\nPress a key to continue\n")
 
+
 def display_properties(properties):
     """
     This function displays details of the properties'
@@ -124,18 +129,21 @@ def display_properties(properties):
     tax_paid = properties["tax_paid"]
     status = properties["status"]
     profit = properties["profit"]
-        
     print()
     print(f"property_number: {property_number}")
     print(f"property_type: {property_type}")
     print(f"house_number: {house_number} - location: {location}")
     print(f"repair_cost: {repair_cost} & tax_paid: {tax_paid}")
-    print(f"price_bought: {price_bought} - status: {status} - profit: {profit}")
+    print(f"price_bought: {price_bought}")
+    print(f"status: {status} - profit: {profit}")
+
 
 def properties_edit_menu():
     """
-    This function provides property update menu and calls other functions to edit it.
-    If an input is invalid, it shows error and makes another input request.
+    This function provides property update menu
+    and calls other functions to edit it.
+    If an input is invalid, it shows error
+    and makes another input request.
     """
     os.system('clear')
     print("Update Property")
@@ -164,7 +172,8 @@ def properties_edit_menu():
         print("You entered an invalid option, please try again")
         input("\nPress a key to continue\n")
         properties_edit_menu()
-        
+
+
 def properties_update_status(housenumber=None):
     """
     This function updates the selling status of the property
@@ -172,15 +181,14 @@ def properties_update_status(housenumber=None):
     as an arguement.
     User searches by house number for the update.
     """
-    
     if housenumber is None:
         housenumber = (input("Enter house_no: \n")).upper()
     result = find_property_by_house_number(housenumber)
     if result is not None:
         display_properties(result)
-        
+
         try:
-            new_status = (input("\nPlease enter the new status\n"))
+            new_status = input("\nPlease enter the new status\n")
             db.properties.update_one(
                 {"house_number": housenumber}, {"$set": {
                     "status": new_status,
@@ -195,6 +203,7 @@ def properties_update_status(housenumber=None):
         print("\nProperty not found")
         input("\nPress a key to continue...\n")
 
+
 def update_properties_profit(housenumber=None):
     """
     This function updates the profit of the property
@@ -202,15 +211,14 @@ def update_properties_profit(housenumber=None):
     as an arguement.
     User searches by house number for the profit update.
     """
-    
     if housenumber is None:
         housenumber = (input("Enter house_no: \n")).upper()
     result = find_property_by_house_number(housenumber)
     if result is not None:
         display_properties(result)
-        
+
         try:
-            updated_profit = (input("\nPlease enter the current profit\n"))
+            updated_profit = input("\nPlease enter the current profit\n")
             db.properties.update_one(
                 {"house_number": housenumber}, {"$set": {
                     "profit": updated_profit,
@@ -225,9 +233,10 @@ def update_properties_profit(housenumber=None):
         print("\nProperty not found")
         input("\nPress a key to continue...\n")
 
+
 def find_property_by_house_number(house_number):
     """
-    This function finds a property in mongodb by the 
+    This function finds a property in mongodb by the
     corresponding house number.
     """
     try:
@@ -235,16 +244,16 @@ def find_property_by_house_number(house_number):
         return result
     except OperationFailure:
         print("Sorry, this house number does not match any property")
-        return None    
+        return None
+
 
 def add_new_property():
     """
     This function prepares a new property in a dictionary form.
     which will be saved subsequently to mongodb by another function.
     User is first asked for house number, if house number already exists,
-    user is obliged to enter a new one. 
+    user is obliged to enter a new one.
     """
-        
     housenumber = (input(
         "To avoid duplication verify house_number:\n")).upper()
     result = find_property_by_house_number(housenumber)
@@ -267,19 +276,20 @@ def add_new_property():
     property_details = {
         "property": property_number,
         "property_type": property_type,
-        "house_number": housenumber,       
+        "house_number": housenumber,
         "location": location,
         "price_bought": price_bought,
         "repair_cost": repair_cost,
         "tax_paid": tax_paid,
         "status": status,
-        "profit": profit,        
-    }
+        "profit": profit,
+        }
     return property_details
+
 
 def save_property_details(properties):
     """
-    This function saves the updates provided in the 
+    This function saves the updates provided in the
     add_new_property function into mongodb.
     """
     try:
@@ -292,10 +302,11 @@ def save_property_details(properties):
         input("\nPress a key to continue\n")
         return False
 
+
 def remove_property():
     """
-    This function finds a property by house number, 
-    confirms if user is sure of removing the specific property. 
+    This function finds a property by house number,
+    confirms if user is sure of removing the specific property.
     Then deletes it upon confirmation.
     """
     house_number = (input("Enter a house number\n")).upper()
@@ -312,10 +323,11 @@ def remove_property():
         print(f"\nNo results found for {house_number}")
     input("\nPress a key to continue\n")
 
+
 def clients_menu():
     """
-    This function displays the clients menu options. 
-    It takes the user input and calls subsequent functions. 
+    This function displays the clients menu options.
+    It takes the user input and calls subsequent functions.
     If an input is invalid, it shows error and ask for the input again.
     """
     os.system('clear')
@@ -356,6 +368,7 @@ def clients_menu():
     # returns back to the clients menu after exploring other functions
     clients_menu()
 
+
 def list_all_clients():
     """
     This function fetchs the list of all the
@@ -373,6 +386,7 @@ def list_all_clients():
             display_clients(result)
     input("\nPress a key to continue\n")
 
+
 def display_clients(clients):
     """
     This function displays details of the clients'
@@ -380,14 +394,14 @@ def display_clients(clients):
     """
     name = clients["name"]
     email = clients["email"]
-    tel = clients["tel"]    
+    tel = clients["tel"]
     associated_property_ref = clients["associated_property_ref"]
-            
     print()
     print(f"name: {name}")
     print(f"email: {email}")
     print(f"tel: {tel}")
     print(f"associated_property_ref: {associated_property_ref}")
+
 
 def clients_edit_menu():
     """
@@ -419,6 +433,7 @@ def clients_edit_menu():
         input("\nPress a key to continue\n")
         clients_edit_menu()
 
+
 def find_client_by_name(name):
     """
     This function finds client in mongodb by their name.
@@ -430,6 +445,7 @@ def find_client_by_name(name):
         print("Sorry, you dont have this name in your list")
         return None
 
+
 def update_property_ref(client_name=None):
     """
     This function updates the associated property ref of the client
@@ -437,15 +453,14 @@ def update_property_ref(client_name=None):
     as an arguement.
     User searches for client by name for the update.
     """
-    
     if client_name is None:
-        client_name = (input("Please enter clients' name: \n"))
+        client_name = input("Please enter clients' name: \n")
     result = find_client_by_name(client_name)
     if result is not None:
         display_clients(result)
-        
+
         try:
-            new_ref = (input("\nPlease enter the new property ref: \n"))
+            new_ref = input("\nPlease enter the new property ref: \n")
             db.clients.update_one(
                 {"name": client_name}, {"$set": {
                     "associated_property_ref": new_ref,
@@ -454,21 +469,21 @@ def update_property_ref(client_name=None):
             print(f"your new property ref is: {new_ref}")
             print("successfully updated!")
         except OperationFailure:
-            print("Sorry! property ref could not update, please try again later")
+            print("Sorry! property ref could not update, please try again")
         input("\nPress a key to continue...\n")
     else:
         print("\nProperty not found")
         input("\nPress a key to continue...\n")
+
 
 def add_new_client():
     """
     This function prepares the entry of a new client in a dictionary form.
     which will be saved subsequently to mongodb by another function.
     User is first asked for client's name, if the name already exists,
-    user is obliged to enter a new one. 
+    user is obliged to enter a new one.
     """
-        
-    client_name = (input("To avoid duplication verify name: \n"))
+    client_name = input("To avoid duplication verify name: \n")
     result = find_client_by_name(client_name)
     if result is not None:
         print("You have already recorded this client\n")
@@ -479,19 +494,20 @@ def add_new_client():
     client_name = (input("Good to go! Please re-enter name: \n")).capitalize()
     email_address = (input("Please enter an email: \n")).lower()
     telephone_number = int(input("Please enter telelephone number: \n"))
-    associated_property_ref = (input("Please enter the associated_property_ref: \n"))
-    
+    associated_property_ref = input("Enter the associated_property_ref: \n")
+
     client_details = {
         "name": client_name,
         "email": email_address,
-        "tel": telephone_number,       
+        "tel": telephone_number,
         "associated_property_ref": associated_property_ref,
     }
     return client_details
 
+
 def save_client_details(clients):
     """
-    This function saves the updates provided in the 
+    This function saves the updates provided in the
     add_new_client function's inputs into mongodb.
     """
     try:
@@ -504,13 +520,14 @@ def save_client_details(clients):
         input("\nPress a key to continue\n")
         return False
 
+
 def remove_client():
     """
-    This function finds a client by name, 
-    confirms if user is sure of removing the specific client. 
+    This function finds a client by name,
+    confirms if user is sure of removing the specific client.
     Then deletes it upon confirmation.
     """
-    name = (input("Enter a name\n"))
+    name = input("Enter a name\n")
     result = find_client_by_name(name)
     if result is not None:
         display_clients(result)
@@ -523,12 +540,14 @@ def remove_client():
     else:
         print(f"\nNo results found for {name}")
     input("\nPress a key to continue\n")
-      
+
+
 def main():
     """
     This runs the entire program functions
     """
     display_homepage()
     display_main_menu()
+
 
 main()
