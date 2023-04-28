@@ -188,3 +188,33 @@ Error handling was implemented throughout the application with the use of try/ex
 ### Features Left to Implement
 
 As a future enhancement, I would like to add some basic functionality to automatically calculate sales and profit instead of the manual input. I would also like to implement updates in accordance with the input date so that users will easily tell when exactly they made a particular input.
+__
+## Logical Flow
+
+### Flowchart
+
+To aid the development process of building the application, I used [Lucid Chart](https://www.lucidchart.com/) to 
+visualise the organisational flow and functionality. This also helped me organise and demonstrate input validation to 
+ensure that key data being sent to the mongo database is completely valid.
+
+![Sellestate Flowchart](docs/sellesate_flowchart.jpg)
+
+**Main Menu**
+
+![Main Menu](docs/lucid_main_menu.jpg)
+
+**Properties Menu**
+
+![Properties Menu](docs/lucid_properties_menu.jpg)
+
+**Clients Menu**
+
+![Clients Menu](docs/lucid_clients.jpg)
+
+**Property Update Menu**
+
+![Property Update Menu](docs/lucid_property_update.jpg)
+
+**Client Update Menu**
+
+![Client Update Menu](docs/lucid_clients_update.jpg)
