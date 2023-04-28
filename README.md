@@ -66,3 +66,14 @@ USER STORY
 `
 As a User, I would love to be able to easily find and understand the main menu so that I can at first know where exactly to get clients or properties information. In order for me to subsequently update, add or remove its details.
 `
+
+IMPLEMENTATION
+* Main Menu
+    * When the application starts, the sell estate logo witha copyright line underneath is displayed on the top of the main menu to introduce the user aesthetically to sell estate.
+    * The main menu beneath the logo displays with the following options:
+        * 1 - Properties
+        * 2 - Clients
+    * The user must input the correct corresponding number displayed on the menu. Else, they will be prompted to enter a numeric value while they are given another chance to re-enter a digit.
+    * This feature will allow the user to easily access the sub menus to each category in order to perform the needed operations.
+
+![Main Menu](docs/sellestate_main_menu.jpg)
