@@ -126,4 +126,7 @@ Add new
 Delete                                                                                                                                   
 ![Delete](docs/delete.jpg)
 
+USER STORY
 
+`
+As a User, I would love to have an intact list of all my clients and the properties they are attached to. In order for me to view their details, update the properties linked to them and also add to the list and or delete when neccessary.
