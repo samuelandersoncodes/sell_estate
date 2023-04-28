@@ -218,3 +218,21 @@ ensure that key data being sent to the mongo database is completely valid.
 **Client Update Menu**
 
 ![Client Update Menu](docs/lucid_clients_update.jpg)
+
+
+## Database Design
+
+MongoDB is used to store the properties and clients with two collections namely; properties and clients.
+
+**Collection 1 - properties**
+
+This collection is used to store property details. As seen below, inserted objects to the properties collection has these fields:
+
+![Properties Collection](docs/mongo_properties.jpg)
+
+**Collection 2 - clients**
+
+This collection is used to store client details.  Objects inserted to this collection has the following fields:
+
+![Clients Collection](docs/mongo_clients.jpg)
+
