@@ -77,3 +77,9 @@ IMPLEMENTATION
     * This feature will allow the user to easily access the sub menus to each category in order to perform the needed operations.
 
 ![Main Menu](docs/sellestate_main_menu.jpg)
+
+USER STORY
+
+`
+As a User, I would like to be able to manage my properties so that I can easily keep track of the properties I have available and view, update, add  and delete when neccessary.
+`
