@@ -180,3 +180,7 @@ IMPREMENTATION
 * An exit option to end the application is also on all the sub menus for easy closing of the application.
 
 This is evident on all the menu screenshots above.
+
+**Error Handling**
+
+Error handling was implemented throughout the application with the use of try/except statements to handle exceptions raised for things like None type values, Database connection errors Key and Value errors.
