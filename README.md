@@ -168,3 +168,15 @@ Add new
 Delete                                                                                    
 ![Delete](docs/clients_delete.jpg)
 
+USER STORY
+
+`
+As a User, I would like to be able to return to the main menu and exit the application without having to restart the application.
+`
+
+IMPREMENTATION
+* All sub menus have an option to return to the main menu and even other umbrella submenus as well. These are typically right above the exit option.
+* This will allow the user to return to the main menu if they selected the wrong option or are done with the current menu.
+* An exit option to end the application is also on all the sub menus for easy closing of the application.
+
+This is evident on all the menu screenshots above.
