@@ -89,7 +89,7 @@ IMPLEMENTATION
     * When the user selects properties from the main menu, the following menu options are displayed:
         * 1 - List All - This option displays all properties currently stored in mongoDB.
         * 2 - Update - This option will open the properties Update Menu, implementation described below.
-        * 3 - Add new - This option will first ask the user to verify if with the house number. If the house number is not already recorded, User is allowed to enter the details of the new property and save it to the mongo database once all details are correctly input. Conversely, if the house number already exists, user is notified that he or she already has that property saved.
+        * 3 - Add new - This option will first ask the user to verify the prospective property by the house number. If the house number is not already recorded, User is allowed to enter the details of the new property and save it to the mongo database once all details are correctly input. Conversely, if the house number already exists, user is notified that he or she already has that property saved.
         * 4 - Delete - This option will allow the user to delete a property from MongoDB after verifying and confirming deletion.
         * 5 - Main Menu - This option will return the user to the main menu.
         * 0 - Exit - This option ends the program with a closing confirmation message.
