@@ -83,3 +83,47 @@ USER STORY
 `
 As a User, I would like to be able to manage my properties so that I can easily keep track of the properties I have available and view, update, add  and delete when neccessary.
 `
+
+IMPLEMENTATION
+* Properties Menu
+    * When the user selects properties from the main menu, the following menu options are displayed:
+        * 1 - List All - This option displays all properties currently stored in mongoDB.
+        * 2 - Update - This option will open the properties Update Menu, implementation described below.
+        * 3 - Add new - This option will first ask the user to verify if with the house number. If the house number is not already recorded, User is allowed to enter the details of the new property and save it to the mongo database once all details are correctly input. Conversely, if the house number already exists, user is notified that he or she already has that property saved.
+        * 4 - Delete - This option will allow the user to delete a property from MongoDB after verifying and confirming deletion.
+        * 5 - Main Menu - This option will return the user to the main menu.
+        * 0 - Exit - This option ends the program with a closing confirmation message.
+    * The user must input a correct number corresponding to each menu or they will be alerted on an incorrect choice and the menu will be presented again.
+    * This feature will allow the user to easily view, add, update and delete properties to and from mongoDB efficiently.
+
+Properties Menu
+
+![Properties Menu](docs/properties_menu.jpg)
+
+List All
+![List all](docs/list_all.jpg)                                                                                                           
+
+* Property Update Menu
+    * When the property update menu is selected, the following menu options display:
+        * 1 - Update status - This will allow user to find a particular property by house number in order to update its status whether sold or still available. 
+        * 2 - Update profit - This will allow user to find a particular property by house number in order to update its profit. 
+        * 3 - Back to properties menu - This will allow the user to go back to the properties menu.
+        * 4 - Main Menu - This option will return the user to the main menu.
+        * 0 - Exit - This option ends the application with a closing confirmation message.
+
+Property Update Menu
+![Property Update Menu](docs/update_property.jpg)
+
+Update status
+![Update status](docs/update_status.jpg)
+
+Update profit
+![Update profit](docs/update_profit.jpg)                                                                                                 
+
+Add new                                                                                                                                   
+![Add new](docs/add_new.jpg)
+                                                                                                                                          
+Delete                                                                                                                                   
+![Delete](docs/delete.jpg)
+
+
