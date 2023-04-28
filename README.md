@@ -130,3 +130,41 @@ USER STORY
 
 `
 As a User, I would love to have an intact list of all my clients and the properties they are attached to. In order for me to view their details, update the properties linked to them and also add to the list and or delete when neccessary.
+
+IMPLEMENTATION
+* Clients Menu
+    * When the user selects clients from the main menu, the following menu options are displayed:
+        * 1 - List All - This option displays all clients currently stored in mongoDB.
+        * 2 - Update - This option will open the clients Update Menu, implementation described below.
+        * 3 - Add new - This option will first ask the user to verify the client by name. If the name is not already recorded, User is allowed to enter the details of the new client and save it to the mongo database once all details are correctly input. In contrast, if the name already exists, user is notified that he or she already has that particular client saved.
+        * 4 - Delete - This option will allow the user to delete a client from MongoDB after verifying and confirming deletion.
+        * 5 - Main Menu - This option will return the user to the main menu.
+        * 0 - Exit - This option ends the program with a closing confirmation message.
+    * The user must input a correct number corresponding to each menu or they will be alerted on an incorrect choice and the menu will be presented again.
+    * This feature will allow the user to easily view, add, update and delete clients to and from mongoDB efficiently.
+
+Clients Menu
+![Clients Menu](docs/clients_menu.jpg)
+
+List All
+![List all](docs/clients_list_all.jpg)
+
+* Clients Update Menu
+    * When the client update menu is selected, the following menu options display:
+        * 1 - Update Property ref - This will allow user to find a particular client by name in order to update his or her associated property reference. 
+        * 2 - Back to Clients Menu - This will allow the user to go back to the clients menu.
+        * 3 - Main Menu - This option will return the user to the main menu.
+        * 0 - Exit - This option ends the application with a closing confirmation message.
+
+Clients Update Menu
+![Clients Update Menu](docs/clients_update_menu.jpg)
+                                                                                                                                          
+Update property ref
+![Update property ref](docs/property_ref.jpg)
+
+Add new                                                                                                                                   
+![Add new](docs/clients_add_new.jpg)
+                                                                                                                                          
+Delete                                                                                    
+![Delete](docs/clients_delete.jpg)
+
