@@ -184,3 +184,7 @@ This is evident on all the menu screenshots above.
 **Error Handling**
 
 Error handling was implemented throughout the application with the use of try/except statements to handle exceptions raised for things like None type values, Database connection errors Key and Value errors.
+
+### Features Left to Implement
+
+As a future enhancement, I would like to add some basic functionality to automatically calculate sales and profit instead of the manual input. I would also like to implement updates in accordance with the input date so that users will easily tell when exactly they made a particular input.
