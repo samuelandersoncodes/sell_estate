@@ -236,3 +236,16 @@ This collection is used to store client details.  Objects inserted to this colle
 
 ![Clients Collection](docs/mongo_clients.jpg)
 
+## Technologies
+
+* Python - Python was the main language used to build the application.
+    * Python packages used:
+        * pymongo - Used to connect to the MongoDB atlas to the application.
+        * pyfiglet - Used to access the mini font for the application's homepage title. 
+        * colorama - Used for the aesthetic design of the application's homepage title and its copyright line.
+        * dotenv - Used to store and hide the mongo database cluster.
+        * os - Used in line with a cls/clear command to clear the command line interface.
+        * sys - Used to access the exit function at the bottom of all submenus. 
+* MongoDB - This was used as data storage in order to store the properties and clients information.
+* ScreenPal - This was used to screen record the Gif right at the top of the readme.
+
