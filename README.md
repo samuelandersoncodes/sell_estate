@@ -357,3 +357,12 @@ The following git commands were used throughout the development to push code to 
     * A big appreciation to my mentor Gareth Mcgirr who guided and pushed me to use mongoDB.
     
     * I thank Olena Olkhovyk for inspiring and encouraging me on throughout the project.
+
+### Content 
+
+All the content with the exception of those listed in the Media and credits sections of this document were originaly made by Samuel Anderson.
+
+### Media
+  
+* The ScreenPal desktop application was used to snap the GIF at the top of the readme.
+* Pixlr X was used was used to edit most of the images in the readme section for clarity, aesthetics and readability.
