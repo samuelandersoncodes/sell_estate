@@ -337,3 +337,23 @@ The following git commands were used throughout the development to push code to 
 * Once the project is created, from the left menu, select Database Access and create a new user with Read and Write access. It's best practice not to use special characters in the password as these will need to be escaped.
 * Once a user has been created, you can click the 'Databases' under deployment and then click connect.
 * Select the Connect your application option and this will provide you with a Mongo URI connection string that can be used in Heroku or an env file locally.
+
+## Credits 
+
+* [Code Institute](https://github.com/Code-Institute-Org/python-essentials-template)
+  * I appreciate Code institute's support and their gitpod template.
+
+* [W3C](https://www.w3schools.com/python/)
+  * I frequently referred to W3school tutorials throughout this project.  
+
+* [Youtube Credentials storage Tutorial](https://www.youtube.com/watch?v=DVVYHlGYIHY)
+    * I learnt how to use the dotenv to keep my mongoDB credentials from the youtube video above.
+
+* [Youtube MongoDB Tutorial](https://www.youtube.com/watch?v=qWYx5neOh2s)
+    * This youtube tutorial was used as a crash course on mongodb for all database functionality used within the project.
+<br><br>
+
+* Persons
+    * A big appreciation to my mentor Gareth Mcgirr who guided and pushed me to use mongoDB.
+    
+    * I thank Olena Olkhovyk for inspiring and encouraging me on throughout the project.
