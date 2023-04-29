@@ -326,3 +326,14 @@ The following git commands were used throughout the development to push code to 
 
 * The app will now be deployed to heroku.
 
+### MongoDB Setup
+
+* Navigate to [MongoDB](https://www.mongodb.com/) and create an account.
+* Verify account by clicking the verification link emailed to you on the email you signed up with.
+* Log in with newly created account.
+* On the top right under projects, click the drop down and select new project.
+* Name the project and click next, filling in subsequent inputs as desired.
+* If prompted, whitelist IP by inputting (0.0.0.0/0) to allow access from anywhere.
+* Once the project is created, from the left menu, select Database Access and create a new user with Read and Write access. It's best practice not to use special characters in the password as these will need to be escaped.
+* Once a user has been created, you can click the 'Databases' under deployment and then click connect.
+* Select the Connect your application option and this will provide you with a Mongo URI connection string that can be used in Heroku or an env file locally.
