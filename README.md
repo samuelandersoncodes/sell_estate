@@ -298,3 +298,31 @@ The following git commands were used throughout the development to push code to 
 
 ```git push -f"``` - This command was used to force push an amended commit message.
 
+### Heroku Deployment
+
+* Install the requirements listed in requirements.txt using the terminal command "pip3 freeze --local > requirements.txt".
+
+* Log-in to [Heroku](https://www.heroku.com) or create an account.
+
+* Choose an app name and region, then click "Create app".
+
+* Go to "Settings" and navigate to Config Vars. 
+   
+* Click the button labelled "Reveal Config Vars" and enter the "key" as port, the "value" as 8000 and click the "add" button.
+
+* In order for the deployed application to have  permissions to access the mongo database, add your cluster variable from the .env file as the "key" and the URI connection string as the "value".
+
+* Scroll down to the buildpacks section of the settings page and click the button labeled "Add Buildpack", choose "Python," and click "Save Changes".
+
+* Repeat the step above to add "Node.js". It must be in this order with Python visibly above Node.js for the application to work.
+
+* Navigate back to the "Deploy" page and select "Github" as the deployment method.
+
+* Connect to your Github account and find your project's repository.
+
+* Scroll down to Manual Deploy on Heroku, select "main" branch and click "Deploy Branch".
+
+* Choose between enable automatic deploys or manual deploys. 
+
+* The app will now be deployed to heroku.
+
