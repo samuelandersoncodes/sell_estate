@@ -249,3 +249,18 @@ This collection is used to store client details.  Objects inserted to this colle
 * MongoDB - This was used as data storage in order to store the properties and clients information.
 * ScreenPal - This was used to screen record the Gif right at the top of the readme.
 
+## Testing
+
+### Functional Testing
+
+Below are the  execution of positive functional tests:
+
+![Main Menu Test](docs/test_main_menu.JPG)
+
+![Properties Menu Test](docs/test_properties_menu.JPG)
+
+![Clients Menu Test](docs/test_clients_menu.JPG)
+
+![Properties Update Menu Test](docs/test_properties_update.JPG)
+
+![Clients Update Menu Test](docs/test_clients_update.JPG)
