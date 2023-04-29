@@ -272,3 +272,11 @@ Negative input validation testing was also conducted on all menu options to ensu
 The entire python code was passed through https://pep8ci.herokuapp.com/ validator and all warnings or errors were fixed. Code then validated successfully.
 
 ![Pep8](docs/pylinter_validation.jpg)
+
+### Bugs and Fixes
+
+At the start of the project, google spreadsheet was used to store data. Data input was not flexible enough. A switch to mongoDB provided the room for all types of data fields and types to be stored flexibly.
+Initially, data could not be fed to the mongo database but the cluster connection was established and that was fixed. 
+Hiding the cluster in an env.py file also did not work so an alternative of dotenv was imported and used.
+
+Along the line, properties with the same house number were able to be added. A fix was implemented to ensure that duplicate properties with the same house number could not be added.
