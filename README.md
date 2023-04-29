@@ -280,3 +280,21 @@ Initially, data could not be fed to the mongo database but the cluster connectio
 Hiding the cluster in an env.py file also did not work so an alternative of dotenv was imported and used.
 
 Along the line, properties with the same house number were able to be added. A fix was implemented to ensure that duplicate properties with the same house number could not be added.
+
+ ## Deployment
+
+ ### Version Control
+The site was created using the Gitpod workspace and pushed to github to the remote repository ‘sell_estate’.
+
+The following git commands were used throughout the development to push code to the remote repository:
+
+```git add .``` - This command was used to add the file(s) to the staging area before they are committed.
+
+```git commit -m “commit message”``` - This command was used to commit changes to the local repository queue ready for the final step.
+
+```git push``` - This command was used to push all committed code to the remote repository on github.
+
+```git commit --amend -m "Amended git commit message"``` - This command was used to correct mistakenly/misspelt pushed commit messages.
+
+```git push -f"``` - This command was used to force push an amended commit message.
+
