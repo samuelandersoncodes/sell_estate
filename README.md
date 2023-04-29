@@ -264,3 +264,5 @@ Below are the  execution of positive functional tests:
 ![Properties Update Menu Test](docs/test_properties_update.JPG)
 
 ![Clients Update Menu Test](docs/test_clients_update.JPG)
+
+Negative input validation testing was also conducted on all menu options to ensure correct input. All options behaved as expected, alerting the user of invalid input and then asking for input again.
