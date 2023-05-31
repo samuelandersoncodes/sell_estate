@@ -248,6 +248,17 @@ def find_property_by_house_number(house_number):
         return None
 
 
+def validate_data(data):
+    """
+    This function validates submitted data.
+    It makes sure empty data cannot be submitted.
+    """
+    result = ''
+    while len(result) == 0:
+        result = input(data)
+    return result()
+
+
 def add_new_property():
     """
     This function prepares a new property in a dictionary form.
