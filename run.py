@@ -253,10 +253,13 @@ def validate_data(data):
     This function validates submitted data.
     It makes sure empty data cannot be submitted.
     """
-    result = ''
-    while len(result) == 0:
-        result = input(data)
-    return result()
+    if len(data) == 0:
+        result = ''
+        while len(result) == 0:
+            print('This field is required')
+            result = input(data)
+        return result
+    return data
 
 
 def add_new_property():
@@ -275,18 +278,18 @@ def add_new_property():
         input("\nPress a key to continue\n")
         return None
 
-    property_number = (input("Please enter property_no: \n")).lower()
-    housenumber = (input("Please enter house_no: \n")).upper()
-    property_type = (input("Please enter property_type: \n")).lower()
-    location = (input("Please enter property location: \n")).lower()
-    price_bought = (input("Please enter price_bought: \n")).lower()
-    repair_cost = (input("Please enter repair_cost: \n")).lower()
-    tax_paid = (input("Please enter tax_paid: \n")).lower()
-    status = (input("Please enter status: \n")).lower()
-    profit = (input("Please enter profit: \n")).lower()
+    property_number = validate_data(input("Please enter property_no: \n")).lower()
+    housenumber = validate_data(input("Please enter house_no: \n")).upper()
+    property_type = validate_data(input("Please enter property_type: \n")).lower()
+    location = validate_data(input("Please enter property location: \n")).lower()
+    price_bought = validate_data(input("Please enter price_bought: \n")).lower()
+    repair_cost = validate_data(input("Please enter repair_cost: \n")).lower()
+    tax_paid = validate_data(input("Please enter tax_paid: \n")).lower()
+    status = validate_data(input("Please enter status: \n")).lower()
+    profit = validate_data(input("Please enter profit: \n")).lower()
 
     property_details = {
-        "property": property_number,
+        "property_number": property_number,
         "property_type": property_type,
         "house_number": housenumber,
         "location": location,
@@ -503,10 +506,10 @@ def add_new_client():
         input("\nPress a key to continue\n")
         return None
 
-    client_name = (input("Good to go! Please re-enter name: \n")).capitalize()
-    email_address = (input("Please enter an email: \n")).lower()
-    telephone_number = int(input("Please enter telelephone number: \n"))
-    associated_property_ref = input("Enter the associated_property_ref: \n")
+    client_name = validate_data(input("Good to go! Please re-enter name: \n")).capitalize()
+    email_address = validate_data(input("Please enter an email: \n")).lower()
+    telephone_number = int(validate_data(input("Please enter telelephone number: \n")))
+    associated_property_ref = validate_data(input("Enter the associated_property_ref: \n"))
 
     client_details = {
         "name": client_name,
