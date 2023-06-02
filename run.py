@@ -189,7 +189,7 @@ def properties_update_status(housenumber=None):
         display_properties(result)
 
         try:
-            new_status = input("\nPlease enter the new status\n")
+            new_status = validate_data(input("\nPlease enter the new status\n"))
             db.properties.update_one(
                 {"house_number": housenumber}, {"$set": {
                     "status": new_status,
@@ -219,7 +219,7 @@ def update_properties_profit(housenumber=None):
         display_properties(result)
 
         try:
-            updated_profit = input("\nPlease enter the current profit\n")
+            updated_profit = validate_data(input("\nPlease enter the current profit\n"))
             db.properties.update_one(
                 {"house_number": housenumber}, {"$set": {
                     "profit": updated_profit,
@@ -475,7 +475,7 @@ def update_property_ref(client_name=None):
         display_clients(result)
 
         try:
-            new_ref = input("\nPlease enter the new property ref: \n")
+            new_ref = validate_data(input("\nPlease enter the new property ref: \n"))
             db.clients.update_one(
                 {"name": client_name}, {"$set": {
                     "associated_property_ref": new_ref,
