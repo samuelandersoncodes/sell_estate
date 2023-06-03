@@ -281,6 +281,8 @@ Hiding the cluster in an env.py file also did not work so an alternative of dote
 
 Along the line, properties with the same house number were able to be added. A fix was implemented to ensure that duplicate properties with the same house number could not be added.
 
+Also, empty data could be submitted to the database while adding new property and client. It was also the case in all data updates. A function; validate_data was created and implemented to fix this bug. Thus after the fix, whenever an empty field is entered, user is prompted with the validation text "This field is required" and asked to make the input again.
+
  ## Deployment
 
  ### Version Control
