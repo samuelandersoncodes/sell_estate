@@ -510,10 +510,13 @@ def add_new_client():
         input("\nPress a key to continue\n")
         return None
 
-    client_name = validate_data(input("Good to go! Please re-enter name: \n")).capitalize()
-    email_address = validate_data(input("Please enter an email: \n")).lower()
-    telephone_number = int(validate_data(input("Please enter telelephone number: \n")))
-    associated_property_ref = validate_data(input("Enter the associated_property_ref: \n"))
+    client_name = validate_data(
+        input("Good to go! Please re-enter name: \n").capitalize())
+    email_address = validate_data(input("Please enter an email: \n").lower())
+    telephone_number = int(validate_data(
+        input("Please enter telelephone number: \n")))
+    associated_property_ref = validate_data(
+        input("Enter the associated_property_ref: \n"))
 
     client_details = {
         "name": client_name,
