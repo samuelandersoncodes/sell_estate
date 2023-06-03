@@ -278,15 +278,19 @@ def add_new_property():
         input("\nPress a key to continue\n")
         return None
 
-    property_number = validate_data(input("Please enter property_no: \n")).lower()
-    housenumber = validate_data(input("Please enter house_no: \n")).upper()
-    property_type = validate_data(input("Please enter property_type: \n")).lower()
-    location = validate_data(input("Please enter property location: \n")).lower()
-    price_bought = validate_data(input("Please enter price_bought: \n")).lower()
-    repair_cost = validate_data(input("Please enter repair_cost: \n")).lower()
-    tax_paid = validate_data(input("Please enter tax_paid: \n")).lower()
-    status = validate_data(input("Please enter status: \n")).lower()
-    profit = validate_data(input("Please enter profit: \n")).lower()
+    property_number = validate_data(
+        input("Please enter property_no: \n").lower())
+    housenumber = validate_data(
+        input("Please enter house_no: \n").upper())
+    property_type = validate_data(
+        input("Please enter property_type: \n").lower())
+    location = validate_data(
+        input("Please enter property location: \n").capitalize())
+    price_bought = validate_data(input("Please enter price_bought: \n"))
+    repair_cost = validate_data(input("Please enter repair_cost: \n"))
+    tax_paid = validate_data(input("Please enter tax_paid: \n"))
+    status = validate_data(input("Please enter status: \n").lower())
+    profit = validate_data(input("Please enter profit: \n").lower())
 
     property_details = {
         "property_number": property_number,
