@@ -6,6 +6,7 @@ from colorama import Style, Fore
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure
 from dotenv import load_dotenv
+
 # Loads the .env file's hidden content
 load_dotenv()
 
@@ -242,7 +243,7 @@ def find_property_by_house_number(house_number):
     corresponding house number.
     """
     try:
-        result = db.properties.find_one({"house_number": house_number})
+        result = db.properties.find_one({"house_number": house_number.upper()})
         return result
     except OperationFailure:
         print("Sorry, this house number does not match any property")
