@@ -6,7 +6,6 @@ from colorama import Style, Fore
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure
 from dotenv import load_dotenv
-
 # Loads the .env file's hidden content
 load_dotenv()
 
@@ -460,7 +459,7 @@ def find_client_by_name(name):
     This function finds client in mongodb by their name.
     """
     try:
-        result = db.clients.find_one({"name": name})
+        result = db.clients.find_one({"name": name.upper()})
         return result
     except OperationFailure:
         print("Sorry, you dont have this name in your list")
@@ -505,7 +504,7 @@ def add_new_client():
     User is first asked for client's name, if the name already exists,
     user is obliged to enter a new one.
     """
-    client_name = input("To avoid duplication verify name: \n")
+    client_name = input("To avoid duplication verify name: \n").upper()
     result = find_client_by_name(client_name)
     if result is not None:
         print("You have already recorded this client\n")
@@ -514,7 +513,7 @@ def add_new_client():
         return None
 
     client_name = validate_data(
-        input("Good to go! Please re-enter name: \n").capitalize())
+        input("Good to go! Please re-enter name: \n").upper())
     email_address = validate_data(input("Please enter an email: \n").lower())
     telephone_number = int(validate_data(
         input("Please enter telelephone number: \n")))
@@ -552,8 +551,8 @@ def remove_client():
     confirms if user is sure of removing the specific client.
     Then deletes it upon confirmation.
     """
-    name = input("Enter a name\n")
-    result = find_client_by_name(name)
+    name = input("Enter a name\n").upper()
+    result = find_client_by_name(name.upper())
     if result is not None:
         display_clients(result)
         confirm_removal = input("\n\nPlease confirm removal? (y/n) : \n")
