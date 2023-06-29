@@ -283,6 +283,8 @@ Along the line, properties with the same house number were able to be added. A f
 
 Also, empty data could be submitted to the database while adding new property and client. It was also the case in all data updates. A function; validate_data was created and implemented to fix this bug. Thus after the fix, whenever an empty field is entered, user is prompted with the validation text "This field is required" and asked to make the input again.
 
+Making a query to the database was problematic with regards to case sensitivity. This was fixed by making the query's case correspond to the input case. Hence, queries of all sorts of cases are successful now.
+
  ## Deployment
 
  ### Version Control
